@@ -1,0 +1,42 @@
+.workers {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    // background-color: gray;
+}
+
+.worker-div {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 25px;
+    >button {
+        margin: 0px 10px;
+    }
+
+    .worker-infos {
+
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: row;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        height: fit-content;
+
+        >p {
+            margin: 0px 0px 0px 0px;
+            padding: 10px 5px;
+            font-size: large;
+            border: 1px solid black;
+        }
+
+
+    }
+
+
+}
