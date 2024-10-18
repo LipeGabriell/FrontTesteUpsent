@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +16,18 @@ export class CrudService {
   }
 
   getSpecific(cpf: string): Observable<any> {
-    return this.http.get(`${this.expressUrl}/workers/specific`);
+    let ht = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'my-auth-token',
+    });
+
+    //Create new HttpParams
+    let p = new HttpParams().set('cpf', cpf);
+
+    return this.http.get(`${this.expressUrl}/workers/specific`, {
+      headers: ht,
+      params: p,
+    });
   }
 
   getProfissions(): Observable<any> {
